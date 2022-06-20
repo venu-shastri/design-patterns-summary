@@ -1,0 +1,61 @@
+/******************************************************************************
+
+                              Online C++ Compiler.
+               Code, Compile, Run and Debug C++ program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include <iostream>
+
+using namespace std;
+
+class IHandler{
+    public:
+    virtual void Handle();
+    virtual void setSuccessor(IHandler* successor);
+}
+
+class HandlerOne:IHandler{
+    IHandler *successor;
+    public:
+    void Handle(){
+        //Handle Operation
+        this->successor->Handle();
+    }
+    void setSuccessor(IHandler* successor){ this->successor=successor;}
+}
+class HandlerTwo:IHandler{
+    IHandler *successor;
+    public:
+    void Handle(){
+        //Handle Operation
+        this->successor->Handle();
+    }
+    void setSuccessor(IHandler* successor){ this->successor=successor;}
+}
+class HandlerFour:IHandler{
+    IHandler *successor;
+    public:
+    void Handle(){
+        //Handle Operation
+        this->successor->Handle();
+    }
+    void setSuccessor(IHandler* successor){ this->successor=successor;}
+}
+int main()
+{
+    cout<<"Hello World";
+
+IHandler * a1=new HandlerOne();
+IHandler * a2=new HandlerOne();
+IHandler * a3=new HandlerOne();
+
+//workflow
+a1->setSuccessor(a2);
+a2->setSuccessor(a3);
+
+a1->Handle();
+
+    return 0;
+}
