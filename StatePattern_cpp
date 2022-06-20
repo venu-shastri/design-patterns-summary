@@ -1,0 +1,86 @@
+/******************************************************************************
+
+                              Online C++ Compiler.
+               Code, Compile, Run and Debug C++ program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include <iostream>
+
+using namespace std;
+
+class Account{
+    private:
+    int minBalance;
+    int balance;
+    IAccountStateHandler* currentState;
+    public:
+    Account(IAccountStateHandler* initialState){
+        this->currentState=initialState;
+    }
+    void Deposit(int amount){
+        //Delegation
+        this->currentState->Deposit(amount,this);
+    }
+    void setState(IAccountStateHandler* nextState){ this->currentState=nextState;}
+    
+    void Withdraw(int amount){
+        this->currentState->Withdraw(amount,this);
+    }
+    int getBalace(){return this->balance;}
+    int getMinBalance(){return this->minBalance;}
+    void setBalance(int amount){this->balance=amount;}
+}
+
+class IAccountStateHandler{
+    public:
+    virtual void Deposit(int amount,Account* context)=0;
+    virtual void Withdraw(int amount,Account* context)=0;
+}
+
+class CreatedStateHandler:IAccountStateHandler{
+    public:
+    void Deposit(int amount,Account* context){
+        if(amount > 0){
+            context->setBalance(amount);
+            context->setState(new ActiveStateHandler());
+        }
+        
+    }
+    void Withdraw(int amount,Account* context){
+        return;
+    }
+    
+    
+}
+
+class ActiveStateHandler:IAccountStateHandler{
+    public:
+    void Deposit(int amount,Account* context){
+        int temp=context->getBalace()-amount;
+        if(temp > context->getMinBalance()){
+            context->setBalance(temp);
+            
+        }
+        else
+        {
+            context->setState(new ODSatateHandler();)
+        }
+        
+    }
+    void Withdraw(int amount,Account* context){
+        return;
+    }
+    
+    
+}
+int main()
+{
+    cout<<"Hello World";
+
+    Account* obj=new Account(new CreatedStateHandler());
+    obj->Withdraw(1000);
+    obj->Deposit(1000);
+    return 0;
+}
