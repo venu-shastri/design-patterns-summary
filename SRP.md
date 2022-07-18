@@ -1,20 +1,41 @@
 ``` c++
 //C++ Code
 bool batteryIsOk(float temperature, float soc, float chargeRate) {
-  if(temperature < 0 || temperature > 45) {
-    cout << "Temperature out of range!\n";
-    return false;
-  } else if(soc < 20 || soc > 80) {
-    cout << "State of Charge out of range!\n";
-    return false;
-  } else if(chargeRate > 0.8) {
-    cout << "Charge Rate out of range!\n";
-    return false;
-  }
-  return true;
+  bool isValid=false;
+  //delegation
+ bool isTemperatureValid=isTemperatureInRange(temperature);
+ bool isSocValid=isSOCInRange(soc);
+ bool isChargeValid=isChargeRateValid(chargeRate);
+ //compose and return result;
+ 
 }
 
+bool isTemperatureInRange(float temperature){
+  if(temperature < 0 || temperature > 45) {
+    printOnConsole("Temperature out of range!");
+    return false;
+  } 
+  return true
+}
 
+bool isSOCInRange(float soc){
+ if(soc < 20 || soc > 80) {
+   printOnConsole("Soc out of range!");
+    return false;
+  } 
+  return true
+}
+bool isChargeRateValid(float chargeRate){
+  if(chargeRate > 0.8) {
+    printOnConsole("Charge Rate out of range!\n");
+    return false;
+  }
+  return true
+}
+..not unit testable
+void printOnConsole(string message){
+ cout <<message<<endl";
+}
 ```
 
 ``` C#
