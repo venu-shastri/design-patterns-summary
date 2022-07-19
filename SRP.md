@@ -53,7 +53,15 @@ public class TemperatureParameterValidator{
    float min,max;
    //tightly coupled , violation of DIP
  //  ConsoleLogger _logger=new ConsoleLogger(); //uses,has-a , dependency
-   IMessageLogger _logger;
+ 
+ //Dependency
+   IMessageLogger _logger; //injection
+   
+   //Constructor Injection
+   public TemperatureParameterValidator(IMessageLogger logger){
+      this._logger=logger;
+   }
+   
    public bool Validate(float temperature){
    
      if(temperature < min || temperature > max) {
