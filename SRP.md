@@ -2,11 +2,7 @@
 //C++ Code
 bool batteryIsOk(float temperature, float soc, float chargeRate) {
   bool isValid=false;
-  //delegation
- bool isTemperatureValid=isTemperatureInRange(temperature);
- bool isSocValid=isSOCInRange(soc);
- bool isChargeValid=isChargeRateValid(chargeRate);
- //compose and return result;
+  
  
 }
 
@@ -41,9 +37,29 @@ void printOnConsole(string message){
 ``` C#
 
 //C# Code
-class Checker
+public class ConsoleLogger{
+
+public void Write(string message){
+ Console.WriteLine(message);
+}
+
+}
+public class TemperatureParameterValidator{
+
+   float min,max;
+   ConsoleLogger _logger=new ConsoleLogger(); //uses,has-a , dependency
+   public bool Validate(float temperature){
+   
+     if(temperature < min || temperature > max) {
+            this._logger.Write("Temperature is out of range!");
+            return false;
+   }
+   return true;
+
+}
+public class Checker
 {
-    static bool batteryIsOk(float temperature, float soc, float chargeRate) {
+    public static bool batteryIsOk(float temperature, float soc, float chargeRate) {
         if(temperature < 0 || temperature > 45) {
             Console.WriteLine("Temperature is out of range!");
             return false;
@@ -56,6 +72,13 @@ class Checker
         }
         return true;
     }
+   private static  bool isSOCInRange(float soc){
+            if(soc < 20 || soc > 80) {
+            printOnConsole("Soc out of range!");
+            return false;
+      } 
+    return true
+}
 
 ```
 
