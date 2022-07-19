@@ -37,17 +37,23 @@ void printOnConsole(string message){
 ``` C#
 
 //C# Code
-public class ConsoleLogger{
+public class ConsoleLogger : IMessageLogger{
 
 public void Write(string message){
  Console.WriteLine(message);
 }
-
 }
+
+interface IMessageLogger{
+  void Write(string message);
+}
+
 public class TemperatureParameterValidator{
 
    float min,max;
-   ConsoleLogger _logger=new ConsoleLogger(); //uses,has-a , dependency
+   //tightly coupled , violation of DIP
+ //  ConsoleLogger _logger=new ConsoleLogger(); //uses,has-a , dependency
+   IMessageLogger _logger;
    public bool Validate(float temperature){
    
      if(temperature < min || temperature > max) {
