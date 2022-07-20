@@ -44,6 +44,13 @@ public void Write(string message){
 }
 }
 
+public class FileLogger : IMessageLogger{
+
+public void Write(string message){
+ //Open and Write File 
+}
+}
+
 interface IMessageLogger{
   void Write(string message);
 }
