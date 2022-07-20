@@ -13,6 +13,41 @@ Design and implement an PricingCalculator  to list the dollar value of a product
 
 ### Assignment - 2
 ```
-public class OnlineCart {     public void CheckOut(PaymentType paymentType)     {         switch(paymentType)         {             case PaymentType.CreditCard:                 ProcessCreditCardPayment();                 break;             case PaymentType.Paypal:                 ProcessPaypalPayment();                 break;             case PaymentType.GoogleCheckout:                 ProcessGooglePayment();                 break;             case PaymentType.AmazonPayments:                 ProcessAmazonPayment();                 break;         }     }      private void ProcessCreditCardPayment()     {         Print("Credit card payment chosen");     }      private void ProcessPaypalPayment()     {         Print("Paypal payment chosen");     }      private void ProcessGooglePayment()     {         Print("Google payment chosen");     }      private void ProcessAmazonPayment()     {         Print("Amazon payment chosen");     } }
+public class OnlineCart
+{
+    public void CheckOut(PaymentType paymentType)
+    {
+        switch(paymentType)
+        {
+            case PaymentType.CreditCard:
+                    ProcessCreditCardPayment();
+                    break;
+            case PaymentType.Paypal:
+                    ProcessPaypalPayment();
+                    break;
+            case PaymentType.GoogleCheckout:
+                    ProcessGooglePayment();break;
+            case PaymentType.AmazonPayments:P
+                    ProcessAmazonPayment();
+                    break;
+        }
+    }
+    private void ProcessCreditCardPayment()
+    {
+        Print("Credit card payment chosen");
+    }
+    private void ProcessPaypalPayment(){
+        Print("Paypal payment chosen");
+    }
+    private void ProcessGooglePayment()
+    {
+        Print("Google payment chosen");
+    }
+    private void ProcessAmazonPayment()
+    {
+        Print("Amazon payment chosen");
+    }
+}
+
 
 ```
