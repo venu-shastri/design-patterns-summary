@@ -1,5 +1,5 @@
  ### Assignemnt - 1
- > Typical product database consists of two types of product components — product categories and product items. 
+Typical product database consists of two types of product components — product categories and product items. 
 A product category is generally  contain product items and also other product categories as its subcategories. Example Product Categories: 
 - Computers
 - Desktops
