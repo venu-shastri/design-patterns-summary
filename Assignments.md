@@ -53,7 +53,7 @@ public class OnlineCart
 ```
 
 ### Assignment - 3
-# CNC Monitoring and Alerting
+#### CNC Monitoring and Alerting
 
 We need a solution to interpret data coming out of a _CNC-machine monitor_.
 Our purpose is to alert when something needs attention.
@@ -64,7 +64,7 @@ The personnel that need to be alerted are different in each case.
 A basic idea of CNC machines can be seen [here](https://en.wikipedia.org/wiki/Numerical_control).
 Keeping these machines safe and reliable is vital in any manufacturing unit.
 
-## Monitored data
+#### Monitored data
 
 The _CNC-machine monitor_ gives the following data:
 
@@ -90,7 +90,7 @@ More than 6 hours of continuous operation requires attention.
 Assume that the above data is monitored and passed-on to your program.
 You can choose to take the inputs as function calls to your program, or as events.
 
-## Expected outputs
+#### Expected outputs
 
 The program needs to indicate if there is a need for attention.
 
