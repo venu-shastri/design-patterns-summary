@@ -110,10 +110,10 @@ https://github.com/venu-shastri/design-patterns-summary/blob/main/DEBT_CODE.docx
 ---
 Let us build a sales reporting application for the management of a store with multiple departments. The features of the application include:
 
-a.	Users should be able to select a specific department they are interested in.
-b.	Upon selecting a department, two types of reports are to be displayed:
-i.	Monthly report — A list of all transactions for the current month for the selected department.
-ii.	YTD sales chart — A chart showing the year-to-date sales for the selected department by month.
+- Users should be able to select a specific department they are interested in.
+- Upon selecting a department, two types of reports are to be displayed:
+- Monthly report — A list of all transactions for the current month for the selected department.
+- YTD sales chart — A chart showing the year-to-date sales for the selected department by month.
 	Whenever a different department is selected, both reports should be refreshed with the data for the currently selected department 
 
 #### Assignemnt 6
@@ -139,15 +139,15 @@ Refactor Below Code and remove code pollution
 #### Assignment - 7 
 ----
 Let us consider an online job site that receives XML data files from different employers with current openings in their organizations. When the number of vacancies is small, employers can enter details online. When the number of vacancies is large, employers upload details in the form of an XML file. Once the XML file is received, it needs to be parsed and processed. Let us assume the XML file to have the following details: 
-a.	 Job title
-b.	 Minimum qualifications
-c.	 Medical insurance 
-d.	 Dental insurance
-e.	 Vision care
-f.	Minimum number of hours of work 
-g.	 Paid vacation 
-h.	 Employer name 
-i.	 Employer address In general,
+-  a.Job title
+- b.Minimum qualifications
+- c.Medical insurance 
+- d.Dental insurance
+- e.Vision care
+- f.Minimum number of hours of work 
+- g.Paid vacation 
+- h.Employer name 
+- i.Employer address In general,
  Details from (c) through (i) are all considered being the same for all jobs posted by a given employer. Apply the required pattern to design the process of parsing the input XML file and creating different JOB objects
 
 
